@@ -1,0 +1,17 @@
+# This is the Vectors transposition
+import numpy as np
+
+x = np.array([25,2,6]) # this is an 1 Dimensional matrix so the no effect in the transposing 
+    # the vector and the shape will remain constant.
+x_t = x.T
+print(x_t)
+
+print(x_t.shape)
+
+y = np.array([[25,3,2]]) # this is can 2D matrix so the effect in the transposing 
+    # the vector shape will be changed.
+print(y)
+y_t = y.T
+print(y_t)
+
+print(y_t.shape)
