@@ -1,0 +1,17 @@
+# In this Lecture we will see the different types of the vectors:-
+# 1. Basis Vector -> Generally used for the unit Vectors -- We have already used it.
+# 2. Orthogonal Vector -> x and y are orthogonal vectors if the dot product of those is 0
+#                      -> Are 90* to each other
+#                      -> Basis Vectors are also Orthogonal vectors
+
+# Code for the Orthogonal Vectors
+import numpy as np
+i = np.array([1,0])
+j = np.array([0,1])
+
+print(np.dot(i,j)) # output -> 0
+
+# 3. Orthonormal Vector -> convert the 2 Orthogonal vectors into unit vectors by dividing them by their magnitudes. 
+# So, these vectors will still be orthogonal to each other and now individually they also have unit magnitude. 
+# Such vectors are known as Orthonormal vectors. 
+# Note: All orthonormal vectors are orthogonal by the definition itself.
