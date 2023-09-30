@@ -1,0 +1,46 @@
+# In this lecture we will study about Norms
+# Norms:- 
+    # When vector represents a magnitude and direction from origins are called Norms.
+    # Norms are the functions that quantify vector magnitude.
+    # Norms mearsure simple distance from origin.
+
+# Other types of Norms:-
+#       1.L^2 Norm
+#       2.L^1 Norm
+#       3.SquaredL^2 Norm
+#       4.Max Norm
+# The code for the L^2 norm :-
+    # 1. L^2 Norm
+import numpy as np
+
+x = np.array([25,2,5])
+
+# Methond 1: By Calculating the L^2 norm by Mathematical represention for only calculating..
+print((25**2 + 2**2 + 5**2) ** (1/2)) 
+    # In this we have squared the numbers in the array and taken out the (sums) square Root.
+
+# Methond 2: Is by the built in function in the numpy for calculating norms.
+print(np.linalg.norm(x))
+
+# There are also the some other types of the norm:-
+    
+    # 2. L^1 Norm
+    # Code for the L^1 norm:-
+     
+print(np.abs(25)+np.abs(2)+np.abs(5))
+
+    # 3. Squared l^2 Norm -> Used for:- 1.Squared l^2 norm is equal to the x^Transpose^x times,
+                                   # 2. Used to train the ML Algorithm 
+                                   # 3. Can't used to distguishing between zero and non-zero.
+    # Code for the Squared l^2 Norm:-
+
+# Method 1:
+print(25**2 + 2**2 + 5**2) # Output -> 654
+
+# Method 2:
+print(np.dot(x,x)) # Output -> 654
+
+    # 4. Max Norm Or (L^Infinite Norm):- used for returning the absolute value of the largest magnitude element in the vector.
+    # Code for the Max Norm :-
+
+print(np.max([np.abs(25), np.abs(2), np.abs(5)])) # output -> 25, if 26 then 26.    
