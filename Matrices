@@ -1,0 +1,18 @@
+# In this lecture we will study about the Matrices...
+import numpy as np
+x = np.array([[25,2],[5,20],[3,7]])
+
+# Printing the Matrices..
+print(x)
+
+# Printing the shpae of the matrices..
+print(x.shape)
+
+# Select left columns ..
+print(x[:0])
+
+# Selecting the middle row of Matrix..
+print(x[1:])
+
+# Another slicing-by-index..
+print(x[0:2,0:2])
