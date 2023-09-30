@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib .pyplot as plt
+
+time = np.linspace(0, 40, 200)
+
+distanceOfRobber = 2.5 * time
+
+distanceOfSheriff = 3 * (time-5)
+
+fig, ax = plt.subplots()
+plt.title('A Bank Robber Caught.')
+plt.xlabel('time (in minutes)')
+plt.ylabel('distance (in km)')
+ax.set_xlim([0, 40])
+ax.set_ylim([0, 100])
+ax.plot(time, distanceOfRobber, c='green')
+ax.plot(time, distanceOfSheriff, c='red')
+plt.axvline(x = 29.910, color='purple', linestyle='--')
+_ = plt.axhline(y = 74.7722, color='purple', linestyle='--')
+plt.show()
