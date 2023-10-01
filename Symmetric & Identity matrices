@@ -1,0 +1,27 @@
+# In this lecture we will study about the Symmetric and the Identity matrices...
+# Symmetric matrix :- 1. shows property of square -> means rows = columns.
+#                     2. X ^ Transpose = X -> No change...
+# Ok then Let's code...
+import numpy as np
+
+x_sym = np.array([[0,1,2],[1,7,8],[2,8,9]])
+
+print("This is the normal x_sym")
+print(x_sym)
+
+print("This is an Transposed the x_sym")
+x_symT = x_sym.T
+print(x_symT) 
+
+
+# This is just for checking if normal is equal to the transposed one.
+print(x_sym == x_symT) # Output -> True
+
+# Identity Matrix :- 1. These are the type of the symmetric matrix.
+#                    2. Every element along main dialong is 1.
+#                    3. All other elements are 0
+idt = np.array([[1,0,0],[0,1,0],[0,0,1]])
+ymul = np.array([25, 2, 3])
+
+# Now multiplying the two matrixes..
+print(np.dot(idt, ymul)) # It's the same output -> (25, 2, 3)
