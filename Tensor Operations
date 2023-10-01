@@ -1,0 +1,39 @@
+# In this lecture we will talk about the Basic Arithmatics of Tensors
+# For simple arithmatic just writeh tensor and the operation.
+# examples:-
+
+# 1. Add
+import numpy as np
+
+x = np.array([[25, 2], [5, 26], [3, 7]])
+print(x)
+
+print(x+2) # Done! 
+# Ouput -> [[27 4] [7 28] [5 9]]
+
+# 2. Multiply
+print(x*2) # Done!
+# Output -> [[50 4] [10 52] [6 14]]
+
+# 3. Substracting 
+print(x-2) # Done!
+# Output -> [[23 0] [3 24] [1 5]]
+
+# 4. Dividing
+print(x/2) #Done!
+# Output -> [[12.5 1] [2.5 13] [1.5 3.5]]
+
+# 5. Modulo
+print(x%2) #Done!
+# Output -> [[1 0] [1 0] [1 1]]
+
+# This is an special type of arithmatic operation : Reduction
+# 6. Reduction
+# For just adding the all elements in the matrice -> x.sum() -> Boom Done!
+print(x.sum()) # Output -> 68
+
+# For suming up all the rows elements -> x.sum(axis=0)
+print(x.sum(axis=0))
+
+# For suming up all the columns elements -> x.sum(axis=1)
+print(x.sum(axis=1))
