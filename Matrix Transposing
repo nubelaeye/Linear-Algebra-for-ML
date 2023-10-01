@@ -1,0 +1,12 @@
+# Tensor Transposing -> mainly transposing the Matrix 
+
+# Code for the Transposing the matrice:-
+import numpy as np
+
+x = np.array([[25, 2], [5, 26], [3, 7]])
+print(x)
+
+x_T = x.T
+print(x_T)
+
+# And it's done we have transposed the matrix. 
