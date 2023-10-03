@@ -1,4 +1,40 @@
 # In this lecture we will study about the Matrix Inversion....
 # We use the matrix inversion for the more convenient approach for solving the linear eq.
 # This is more efficient to use at the place of the substitution or elimination..
+# It satifies: X ^ -1 = Identity Matrix.
+# So, let's take an example : Prediction of house prices....
+#               y(house price) = X(features) x w(w is the vector of weights) 
+# The equation of y = Xw : 'y' -> could be the prices of the houses, 
+# 'X' -> this is the features of the houses like : Bathroom, Bedroom, area....etc 
+# 'w' -> is the vector that contains the unknown values, it's the models leanable parameters.
+# Now let's solve the equation y = Xw.
+# 1. Xw = y(Can be also written).
+# 2. Now adding matrix inverse both the sides -> X^-1 Xw = X^-1y
+# 3. we know that the X^-1X = Identity matrix -> I(Identity) x w = X^-1 x y
+# 4. we konw that if we multiply any n matrix with Identity matrix the result is the matrix n
+# 5. So, w = X^-1y.
 
+# Ok, then let's start the code here:-
+import numpy as np
+
+X = np.array([[4, 2],[-5, -3]])
+X_Inverse = np.linalg.inv(X)
+
+y = np.array([4, -7])
+
+weights = np.dot(X_Inverse, y)
+
+# showing that y = Xw
+
+print(np.dot(X, weights)) 
+
+# Output -> [[4 2][-5 -3]]
+
+# Limitation of  Matrix Inversion -> can't be only calculated when :
+# 1. Matrix isn't singular
+# 2. Columns of matrix must be linearly independent. ex -> if a column is [1,2] the other
+# column can't be [2,4] and also not [1,2] -> means can't the same or double or half of it.
+# 3. Matrix must be the square dimension -> col x n = row x n. 
+
+# The term 'Overdetermined' -> means where (number of rows) > (number of columns).
+# The term 'Underdetermined'  -> means where (number of rows) < (number of colums).   
