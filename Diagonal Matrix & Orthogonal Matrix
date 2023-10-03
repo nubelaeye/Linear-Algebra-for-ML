@@ -1,0 +1,11 @@
+# In this lecture we will study about the Diagonal matrix and the Orthogonal matrix...
+# A diagonal matrix means: That non-zero element along main diagonal and else zero everywhere.
+# Identity matrix is example of Diagonal matrix 
+# It's computationally efficient : multiplication (X x Y), Inversion -> but can't divide by zero when the main diagonal contains zero..
+# Can be non-square but still efficient to use..
+
+# The orthogonal and the orthonormal matrices:
+    # Are made up of rows and columns
+# This means: A^T x A = A x A^T = Identity matrix
+# which also means : A^T = A^-1 x Identity matrix = A ^ -1
+# So, A ^ T = A ^ -1
