@@ -9,3 +9,4 @@
 # This means: A^T x A = A x A^T = Identity matrix
 # which also means : A^T = A^-1 x Identity matrix = A ^ -1
 # So, A ^ T = A ^ -1
+* You have been done with the diagonal and the Orthogoanl matrix....
