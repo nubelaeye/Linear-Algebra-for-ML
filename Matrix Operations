@@ -1,0 +1,33 @@
+# By this lecture we will start learning about the Matrix Operations...
+# The model of Linear Algebra Applications:
+    # 1. Solving for the unknowns in the linear system..
+    # 2. Reducing Dimensionalty
+    # 3. Ranking result -> with eigenvectors as in google's rank page..
+    # 4. Recommenders -> Singular Value decomposition(SVD) for recommending the 
+    # most viwed topics. example as youtube as its recommendation for the user just like that.
+    # 5. Natural Language processing.. -> SVD, matrix factorization.
+        # Used for Topic modeling, Semantic analysis..
+# Ok now we are good to go with the Matrix operations...
+
+# Ok then let's start it...
+# 1. we will know how to apply matrix.
+# Question 1.
+import numpy as np
+
+x = np.array([[1,0,0],[0,1,0],[0,0,1]])
+
+u = np.array([2,5,-3])
+
+# This is how we apply the matrix on to the other vector or matrix..
+# The word apply means is to multiply.
+print(np.dot(x, u))
+
+# Question 2.
+b = np.array([[2,0,-1],[-2,3,1],[0,4,-1]])
+
+print(np.dot(b, u))
+
+# Question 3.
+u2 = np.array([0,-4,6])
+U = u+u2
+print(np.dot(U, b))
