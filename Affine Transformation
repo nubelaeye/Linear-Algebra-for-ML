@@ -1,0 +1,25 @@
+# In this lecture we will see lots of things....
+import numpy as np
+
+v = np.array([4,2])
+
+# The change of the signs in the geographical plot in graph is called Affine transformation.
+# for example:- (3,1) -> (3,-1)
+# The uses of affine transformation are:-
+#   1. Scalling.
+#   2. Shearing( example -> painting of Mons Lisa coming up shortly).
+#   3. Rotation.
+
+# We can transform the vector into the matrix just by:-
+# v = np.matrix(v).T
+# print(v)
+
+# We can use concatenate the vectors together..
+v2 = np.array([47,21])
+v3 = np.array([46,22])
+v4 = np.array([45,23])
+v5 = np.array([44,24])
+
+V = np.concatenate((np.matrix(v).T, np.matrix(v2).T, np.matrix(v3).T, np.matrix(v4).T, 
+                   np.matrix(v5).T),axis=1)
+print(V)
