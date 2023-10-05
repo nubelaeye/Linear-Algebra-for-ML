@@ -1,0 +1,51 @@
+# In this lecture we will study about the Eigenvectors and Eigenvalues.
+
+
+
+# Eigenvectors:- is a special vector v such that when it is transformed by some matrix, the 
+# product has the exact same direction as v.
+
+# Eigenvalues:- is a scalar that simply scales the eigenvector v such that the following 
+# equation is satisfied : Av = lambda of v.
+
+# Ok, then let's code it up!
+import numpy as np 
+
+A = np.array([[-1, 4],[2,-2]])
+
+lambdas, v = np.linalg.eig(A)
+# printing the eigenvectors each columns is a separate eigenvector 1, 2 and both have its 
+print(v)
+# own eigenvalues which is represented here!
+# printing the eigenvalues
+print(lambdas)
+
+# Checking that the A of v is equal to the Lambda of v.
+V = v[:,0]
+
+Lbd = lambdas[0]
+
+Av = np.dot(A,V)
+print(Av)
+# By these both we know the left hand is equal to the right hand: A * v = lambda * v.
+print(Lbd * V)
+
+# Eigenvector in greater than 2 Dimensional!
+x = np.array([[25,2,9],[5,26,-5],[3,7,-1]])
+lambdaX, V_X = np.linalg.eig(x)
+
+# One eigenvector per column of x..
+
+print(V_X)  
+# A corresponding eigenvalues for each eigenvectors..
+
+print(lambdaX)
+
+# X * v = lambda * v
+v_x = V_X[:,0]
+
+lambda_x = lambdaX[0]
+
+print(np.dot(x,v_x))
+
+print(v_x * lambda_x)
