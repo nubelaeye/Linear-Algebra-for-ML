@@ -1,7 +1,5 @@
 # In this lecture we will study about the Eigenvectors and Eigenvalues.
 
-
-
 # Eigenvectors:- is a special vector v such that when it is transformed by some matrix, the 
 # product has the exact same direction as v.
 
@@ -49,3 +47,29 @@ lambda_x = lambdaX[0]
 print(np.dot(x,v_x))
 
 print(v_x * lambda_x)
+
+# At the very last the best explanation and differentiation between Eigenvalues & Eigenvector.
+# Eigenvalues and eigenvectors are fundamental concepts in linear algebra, often used in various 
+# fields such as physics, engineering, computer science,
+# and data analysis. Let's break down these concepts in a simple way:
+
+# Eigenvalues (λ):
+
+# Eigenvalues are scalars (single numbers) associated with a square matrix 
+# (a matrix with the same number of rows and columns).
+# They represent how the matrix scales or stretches space in certain directions.
+# For a matrix A and an eigenvalue λ, if there exists a non-zero vector v such that 
+# when A operates on v (i.e., Av), the result is a scaled version of v, then λ is an 
+# eigenvalue of A.
+# Mathematically, for a square matrix A and an eigenvalue λ, we have the equation: Av = λv, 
+# where v is the eigenvector corresponding to λ.
+# Eigenvectors (v):
+
+# Eigenvectors are non-zero vectors associated with eigenvalues.
+# They represent the directions along which the linear transformation (represented by the matrix) 
+# only results in a scaling of the vector. Eigenvectors are often normalized to have a magnitude 
+# of 1 for simplicity, which means they represent direction only, not magnitude.
+# In summary, eigenvalues tell you how a matrix scales space in certain directions, 
+# while eigenvectors represent those directions. 
+# When you multiply a matrix by an eigenvector, the result is a scaled version of that eigenvector,
+# where the scale factor is the corresponding eigenvalue.
