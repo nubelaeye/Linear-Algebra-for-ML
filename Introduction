@@ -1,3 +1,4 @@
+# This one is just for the fun and the starting of the course, this is the example about the one sheriff is catching to the thief's car.
 import numpy as np
 import matplotlib .pyplot as plt
 
