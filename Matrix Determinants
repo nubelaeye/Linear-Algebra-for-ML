@@ -1,0 +1,15 @@
+# In this lecture we will study about the Matrix determinants..
+# The determinant is special scalar value that we can calculate for any given matrix.
+# It maps the square matrix into scalar.
+# It enables us to determine whether the matrix can be inverted or not.
+# If determine of matrix = 0. then, 
+#       * Matrix inversion can't be computed!
+#       * Means matrix X is singular: It contains linearly-dependent columns.
+
+# Let's see how we can determine the 2 x 2 matrix...
+# for example... x = [a b, c d] -> |x| = a multiply d - b multiply c
+# OK, enough talk let's code it..
+import numpy as np
+
+x = np.array([[4,2],[-5,-3]])
+print(np.linalg.det(x))
