@@ -1,0 +1,75 @@
+# In this lecture we will study about the eigen decomposition...
+# The decomposition of a matrix is to convert it into eigenvector and eigenvalues that
+# reveals characteristics of the matrix. example:-
+#       Matrix is singular only and only if any of its eigenvalues is zero.
+#       Under specific condition we use optimize the quadratic expression:-
+#           1. Maximum of f(x) = largest eigenvalue. 
+#           2. Minimum of f(x) = smallest eigenvalue. 
+
+# If you go under more detail then, 
+
+# Eigen decomposition, also known as eigendecomposition, is a mathematical technique 
+# used to decompose a square matrix into a set of its eigenvalues and eigenvectors. 
+# It is often used in linear algebra and various fields of science and engineering. 
+# Here's a simple way to define eigen decomposition:
+
+# Eigen decomposition of a square matrix A:
+# 1. Given a square matrix A, find a set of eigenvalues (λ) and corresponding eigenvectors 
+# (v) such that when A is multiplied by an eigenvector v, the result is a scaled version of 
+# v, represented as Av = λv.
+
+# 2. The eigenvalues (λ) are scalar values that indicate how much the corresponding 
+# eigenvectors
+# (v) are scaled when multiplied by the matrix A.
+
+# 3. The eigenvectors (v) are non-zero vectors that represent the directions along which the
+# matrix A primarily stretches or compresses space.
+
+# 4. Collect all the eigenvalues and their corresponding eigenvectors to form the 
+# eigenvalue-eigenvector pairs.
+
+# The eigen decomposition of a matrix is often written as:
+# A = PDP^(-1)
+
+# Where:
+# - A is the original square matrix.
+# - P is a matrix whose columns are the eigenvectors of A.
+# - D is a * diagonal matrix * containing the eigenvalues of A.
+
+# Eigen decomposition is a fundamental concept in linear algebra and is used in various 
+# applications, including solving systems of differential equations, 
+# analyzing dynamical systems, and performing dimensionality reduction 
+# techniques like Principal Component Analysis (PCA).
+
+# OK, then let's go through the code of it...
+import numpy as np 
+
+A = np.array([[4,2],[-5,-3]])
+
+lambdas, V = np.linalg.eig(A)
+# For taking the inverse we will we use:-
+Iv = np.linalg.inv(V)
+# For obtaining the diagonal matrix:-
+lambdas2 = np.diag(lambdas)
+
+print(A)
+print(np.dot(V, np.dot(lambdas2,Iv))) # Yes, they are same...
+
+# While Eigendecomposition is not possible for all the matrices. And in some cases where it
+# is possible, the eigendecomposition involes complex numbers instaed of simple real numbers.
+
+# In machine learning, however, we are typically working with the real symmetric matrices, 
+# which can be conveniently and efficient decomposed into only real eigenvectors and 
+# real- only eigenvalues. If A is real symmetric matrix then...
+
+# A = QΛQ^T
+# where Q is analogous to V from the previous equation except that it's special becuase, 
+# it's an orthogonal matrix..
+# Let's see how does it looks like...
+A = np.array([[2,1],[1,2]])
+
+la, Q = np.linalg.eig(A)
+Λ = np.diag(la)
+
+# Now checking that is A = QΛQ^T 
+print(np.dot(Q, np.dot(Λ, Q.T))) # And here we go -> it's same.
