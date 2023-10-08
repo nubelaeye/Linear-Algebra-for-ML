@@ -1,0 +1,16 @@
+# In this lecture we will study about how to determine large martrices.
+# Using recursion we can calculate the determinant of the matrix.
+# here x[1,1] (x) -> this is multiply
+# \X\ = x[1,1] x det(X[1,1]) - x[1,2] x det(X[1,2]) + x[1,3] x det(X[1,3])
+# You would observe that the signs are changing alternatily. 
+# let say x = [1 2 4][2 -1 3][0 5 1]:-
+# This is mathematically representation of the determinant of the large matrices.
+# 1(-1 x 1 - 3 x 5) - 2(2 x 1 - 3 x 0) + 4(2 x 5 - (-1) x 0)
+# 1(-1 - 15) - 2(2 - 0) + 4(10 - 0)
+# -16 - 4 + 40 -> 20...
+# Ok, now let's code it.
+# The code of this is just same as the matrix determinant only the matrix has been large.. 
+import numpy as np
+
+x = np.array([[1, 2, 4], [2, -1, 3], [0, 5, 1]])
+print(np.linalg.det(x))
