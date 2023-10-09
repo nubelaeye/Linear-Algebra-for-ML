@@ -1,0 +1,33 @@
+# In this lecture we will study about the Singular Value decomposition [SVD]...
+# Ok let's talk about it..
+# Singular Value Decomposition allows us to decompose the real-valued matrix. 
+#  Decomposes matrix into :-
+#       Singular vectors : which are as the eigenvectors
+#       Singular value : which are as the eigenvalue
+#  For Matrix A, it's SVD is A = UDV^T -> A = [U][D][V^T]
+
+# In equation: A = UDV^T
+# U is a orthogonal m x m matrix; it's columns are the left-singular vectors of A.
+# V is a orthogonal n x n matrix; it's columns are the right-singular vectors of A.
+# D is a diagonal m x n matrix; elements along it's diagonal are singular values of A.
+# Ok Let's code it now...
+
+import numpy as np
+
+A = np.array([[-1,2],[3,-2],[5,7]])
+U, d, VT = np.linalg.svd(A)
+# Currently the VT is a transposed part of the A.
+D = np.concatenate((np.diag(d),[[0,0]]),axis=0)
+
+# The the statement is true...
+print(np.dot(U, np.dot(D, VT)))
+
+# And the SVD and eigendecomposition are closely related to each other:-
+#   Left-singular-vectors of A = AA^T.
+#   right-singular-vectors of A = A^TA.
+#   non-zero-singular-values of A = squart roots of eigenvectors AA^T = square root of 
+#   eigenvectors of A^TA.
+
+print(np.dot(A,A.T))
+print(np.dot(A.T,A))
+print(np.dot(A,A.T) * (1/2))
