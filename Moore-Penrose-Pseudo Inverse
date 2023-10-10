@@ -1,0 +1,17 @@
+# In this lecture we will study about the moore-penrose-pseudoinverse.
+# By this we can calculate for the unknowns too...
+# Let's calculate the pseudoinverse A^+ of some matrix A using the formula: A^+=VD^+U^T
+# where: U, D and V are SVD of A, D^+ = (D with reciprocal of all non-zero elements)^T.
+# Let's code it...
+import numpy as np
+
+A = np.array([[-1,  2],[ 3, -2],[ 5,  7]])
+
+U, d, VT = np.linalg.svd(A)
+
+D = np.linalg.inv(np.diag(d))
+
+Dplus = np.concatenate((D, np.array([[0,0]]).T), axis = 1)
+
+Apinv = np.dot(VT.T, np.dot(Dplus, U.T)) # This is the Moore-Penrose-PseudoInverse
+print(np.linalg.pinv(A) == Apinv) # And the ouput is the True/same.
