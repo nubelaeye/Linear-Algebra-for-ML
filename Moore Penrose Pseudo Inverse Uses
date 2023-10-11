@@ -1,0 +1,36 @@
+# In this lecture,we study about how we can takeout the values of unknowns in an equation
+# By using Moore-Penrose-pseudoinverse is a Mega useful because non-square matrices are 
+# common in ML. for example :- The house pricing prediction.
+# With MPP, we can now find the model weights if n is not equal to m : w = X ^ + y.
+
+import numpy as np
+import matplotlib .pyplot as plt
+
+
+x1 = np.array([0,1,2,3,4,5,6,7])
+y = np.array([1.68,1.31,.62,.33,.09, -.67, -1.23, -1.37])
+
+fig, ax = plt.subplots()
+plt.title('A Clinical Trial')
+plt.xlabel('Drug Dosage (ml)')
+plt.ylabel('Forgot the Drug')
+_ = ax.scatter(x1, y)
+
+# Drawing an intercept across all the points so we can set it equal to 1 across the board.
+
+x0 = np.ones(8)
+X = np.concatenate((np.matrix(x0).T,np.matrix(x1).T),axis = 1)
+
+# Calculating the weights..
+w = np.dot(np.linalg.pinv(X),y)
+
+b = np.asarray(w).reshape(-1)[0]
+m = np.asarray(w).reshape(-1)[1]
+
+x_min, x_max = ax.get_xlim()
+y_at_xmin = m*x_min + b
+y_at_xmax = m*x_max + b
+
+ax.set_xlim([x_min, x_max])
+_ = ax.plot([x_min, x_max], [y_at_xmin, y_at_xmax], c='C01')
+plt.show()
