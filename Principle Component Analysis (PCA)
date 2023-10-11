@@ -1,0 +1,29 @@
+# In this lecture we will study about the awesome topic the Principle Component Analysis(PCA).
+# Let's talk about PCA..
+# It is a simple machine learning algorithm
+# It allows us to work with unsupervised data for identification of structure in unlabled 
+# Data. It also enables for lossy compression
+# It involves many linear algebra concepts:- Norm, Orthogonal and Identity matrix, Trace Opr.
+
+# Ok now let's look at the code side too..
+from sklearn import datasets
+from sklearn.decomposition import PCA
+import matplotlib .pyplot as plt
+import numpy as np
+
+# In this lecture we are going to use the datasets of IRIS -> It's kind of dataset that
+# contains the feature of the flowers :- sepal length & width and petal width & length.
+iris = datasets.load_iris()
+print(iris.get("feature_names"))
+pca = PCA(n_components=2)
+x = pca.fit_transform(iris.data)
+fig, ax = plt.subplots()    
+# _ = plt.scatter(x[:,0],x[:,1])
+
+unique_elements, counts_elements = np.unique(iris.target, return_counts=True)
+np.asarray((unique_elements, counts_elements))
+
+print(list(iris.target_names)) # These are 'setosa', 'versicolor', 'virginica'
+
+_ = plt.scatter(x[:, 0], x[:, 1], c=iris.target)
+plt.show()
