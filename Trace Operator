@@ -1,0 +1,11 @@
+# In this lecture we will study about the Trace Operator...
+# It is denoted as the Tr(A) and it is just the sum of its diagonal elements of matrix A.
+# Okay, let's see how does it work..
+
+import numpy as np
+
+A = np.array([[-1,2],[3,-2],[5,7]])
+print(np.trace(A)) # As we studied earlier is the sum of the diagonal-> 25 + 4 = 29.
+
+# The trace operator can be also used for :- Tr(A) = Tr(A^T) and it can also calculate the 
+# Forbenius Norm :- By ||A||F = √Tr(AAT)
