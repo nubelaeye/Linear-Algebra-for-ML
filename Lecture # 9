@@ -1,0 +1,15 @@
+# In this lecture we are going to see the Dot Product.
+# OK let's code it up:-
+
+import numpy as np
+
+# The very first array 
+x = np.array([25,2,5])
+
+# The second array
+y = np.array([0, 1, 2])
+
+# Print the dot products of the both x and y
+print(np.dot(x,y)) # Output -> 12
+
+# The mathematical approach for this problem is : (25 x 0) + (2 x 1) + (5 x 2) = 12
