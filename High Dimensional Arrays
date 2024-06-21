@@ -1,9 +1,0 @@
-# In this lecture we will study about the high Dimensional Array Which is really important
-# And very common in ML. Beside that "I am very interested for studying it"....
-
-import numpy as np
-
-img = np.zeros([1,2,3,4]) 
-print(img)
-
-# And this is what we have to create...
