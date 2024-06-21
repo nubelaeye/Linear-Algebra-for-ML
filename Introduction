@@ -8,6 +8,7 @@ distanceOfRobber = 2.5 * time
 
 distanceOfSheriff = 3 * (time-5)
 
+#Plotting the graph
 fig, ax = plt.subplots()
 plt.title('A Bank Robber Caught.')
 plt.xlabel('time (in minutes)')
